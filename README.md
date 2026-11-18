@@ -7,6 +7,9 @@
 ## 📌 Visão Geral do Sistema
 Este website apresenta minha formação acadêmica em Engenharia de Software na PUC Minas, a linha do tempo cronológica dos projetos desenvolvidos no GitHub, habilidades técnicas e canais diretos de contato com design minimalista em **preto e dourado**, suporte bilíngue (Português/Inglês) e animações suaves ao rolar a página.
 
+## 🌐 Site Publicado
+
+Acesse o portfólio online:https://portfolio-profissional-7oi8.onrender.com/
 ---
 
 ## 🚀 Tecnologias Utilizadas
