@@ -31,7 +31,7 @@ export const About = ({ currentLang }) => {
   return (
     <section id="sobre" className="py-20 md:py-28 relative bg-[#09090b] border-t border-[#1f1f23]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#d4af37] uppercase mb-2">
@@ -46,7 +46,7 @@ export const About = ({ currentLang }) => {
             </h2>
           </div>
 
-          {/* Interactive Language Selector for Sobre Mim */}
+          
           <div className="flex items-center p-1 bg-[#141418] border border-[#27272a] rounded-xl self-start md:self-auto">
             <button
               onClick={() => setActiveTab('pt')}
@@ -71,7 +71,7 @@ export const About = ({ currentLang }) => {
           </div>
         </div>
 
-        {/* Lead Bio Narrative */}
+       
         <motion.div
           key={activeTab}
           initial={{ opacity: 0, y: 12 }}
@@ -79,7 +79,7 @@ export const About = ({ currentLang }) => {
           transition={{ duration: 0.4 }}
           className="bg-[#0f0f13] border border-[#27272a] rounded-2xl p-6 sm:p-8 md:p-10 mb-8 relative overflow-hidden"
         >
-          {/* Subtle golden corner highlight */}
+          
           <div className="absolute top-0 right-0 w-48 h-48 bg-[#d4af37]/5 blur-3xl pointer-events-none" />
 
           <p className="text-base sm:text-lg text-zinc-200 leading-relaxed font-normal">
@@ -99,7 +99,7 @@ export const About = ({ currentLang }) => {
           </div>
         </motion.div>
 
-        {/* 2 Pillars Grid: Formação Acadêmica & Objetivos Profissionais */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pillars.map((pillar, idx) => {
             const IconComponent = pillar.icon;

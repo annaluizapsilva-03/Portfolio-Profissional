@@ -42,7 +42,7 @@ export const ReadmeModal = ({ isOpen, onClose, currentLang }) => {
           exit={{ opacity: 0, scale: 0.95, y: 16 }}
           className="relative bg-[#0d0d12] border border-[#27272a] rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col z-10"
         >
-          {/* Header */}
+          
           <div className="px-6 py-4 border-b border-[#222228] bg-[#121217] flex items-center justify-between gap-4">
             <div className="flex items-center gap-2.5">
               <FileText className="w-5 h-5 text-[#d4af37]" />
@@ -81,7 +81,7 @@ export const ReadmeModal = ({ isOpen, onClose, currentLang }) => {
             </div>
           </div>
 
-          {/* Markdown Content Viewer */}
+          
           <div className="p-6 overflow-y-auto font-mono text-xs text-zinc-300 leading-relaxed bg-[#0a0a0e] select-text">
             <pre className="whitespace-pre-wrap break-words">{TEMPLATE_README_CONTENT}</pre>
           </div>

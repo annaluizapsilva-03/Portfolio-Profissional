@@ -23,7 +23,7 @@ export const Projects = ({ currentLang }) => {
     { id: 'saude', label: isPt ? 'Saúde' : 'Health' },
   ];
 
-  // Filter projects
+  
   const filteredProjects = PROJECTS.filter((p) => {
     if (selectedCategory === 'all') return true;
     if (selectedCategory === 'fintech') return p.id === 'finansmart';
@@ -34,18 +34,18 @@ export const Projects = ({ currentLang }) => {
     return true;
   });
 
-  // Sort projects according to timeline requirement
+  
   const sortedProjects = [...filteredProjects].sort((a, b) => {
     return sortOrder === 'oldestFirst' ? a.order - b.order : b.order - a.order;
   });
 
   return (
     <section id="projetos" className="py-20 md:py-28 relative bg-[#09090b]">
-      {/* Background radial gradient */}
+      
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#d4af37]/4 blur-[130px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#d4af37] uppercase mb-2">
@@ -65,7 +65,7 @@ export const Projects = ({ currentLang }) => {
             </p>
           </div>
 
-          {/* Timeline Sort Toggle (Oldest to Newest required by PO) */}
+          
           <div className="flex items-center gap-2 bg-[#121217] border border-[#27272a] p-1.5 rounded-xl self-start md:self-auto">
             <button
               onClick={() => setSortOrder(sortOrder === 'oldestFirst' ? 'newestFirst' : 'oldestFirst')}
@@ -85,7 +85,7 @@ export const Projects = ({ currentLang }) => {
           </div>
         </div>
 
-        {/* Filter Segmented Controls */}
+        
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
           {categories.map((cat) => (
             <button
@@ -102,7 +102,7 @@ export const Projects = ({ currentLang }) => {
           ))}
         </div>
 
-        {/* Timeline Indicator Banner */}
+        
         <div className="mb-8 py-2 px-4 bg-[#121218] border border-[#22222a] rounded-xl flex items-center justify-between text-xs text-zinc-400 font-mono">
           <div className="flex items-center gap-2">
             <Layers className="w-3.5 h-3.5 text-[#d4af37]" />
@@ -118,7 +118,7 @@ export const Projects = ({ currentLang }) => {
           </span>
         </div>
 
-        {/* Chronological Projects Grid */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {sortedProjects.map((project, idx) => {
             const isFeatured = project.id === 'finansmart' || project.id === 'cardapio-restaurante';
@@ -135,7 +135,7 @@ export const Projects = ({ currentLang }) => {
                 }`}
               >
                 <div className={isFeatured ? 'grid grid-cols-1 lg:grid-cols-12 gap-6' : ''}>
-                  {/* Media Showcase container */}
+                  
                   <div
                     onClick={() => setActiveModalProject(project)}
                     className={`relative overflow-hidden cursor-pointer bg-[#14141b] group ${
@@ -150,7 +150,7 @@ export const Projects = ({ currentLang }) => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity" />
 
-                    {/* Interactive Demo Play Overlay Button */}
+                    
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
                       <div className="px-4 py-2.5 bg-[#d4af37] text-black font-semibold text-xs rounded-xl flex items-center gap-2 shadow-xl transform translate-y-2 group-hover:translate-y-0 transition-transform">
                         <Play className="w-3.5 h-3.5 fill-current" />
@@ -158,7 +158,7 @@ export const Projects = ({ currentLang }) => {
                       </div>
                     </div>
 
-                    {/* Timeline Badge in Corner */}
+                    
                     <div className="absolute top-3 left-3 bg-[#0d0d11]/85 backdrop-blur-md border border-[#27272a] px-2.5 py-1 rounded-md text-[11px] font-mono text-[#facc15] flex items-center gap-1.5">
                       <span>#{project.order}</span>
                       <span className="text-zinc-600">·</span>
@@ -166,10 +166,10 @@ export const Projects = ({ currentLang }) => {
                     </div>
                   </div>
 
-                  {/* Content container */}
+                  
                   <div className={`p-6 flex flex-col justify-between ${isFeatured ? 'lg:col-span-5' : ''}`}>
                     <div>
-                      {/* Zero-Pill Metadata Discipline */}
+                      
                       <div className="flex items-center gap-2 text-xs text-zinc-400 font-mono mb-2.5">
                         <span className="text-[#d4af37]">{project.category}</span>
                         <span aria-hidden="true" className="text-zinc-600">·</span>
@@ -190,7 +190,7 @@ export const Projects = ({ currentLang }) => {
                         {project.description[currentLang]}
                       </p>
 
-                      {/* Tech Stack list */}
+                      
                       <div className="pt-2 pb-4 flex flex-wrap gap-1.5">
                         {project.technologies.map((tech) => (
                           <span
@@ -203,7 +203,7 @@ export const Projects = ({ currentLang }) => {
                       </div>
                     </div>
 
-                    {/* Action buttons */}
+                    
                     <div className="pt-4 border-t border-[#222228] flex items-center justify-between gap-3">
                       <button
                         onClick={() => setActiveModalProject(project)}
@@ -232,7 +232,7 @@ export const Projects = ({ currentLang }) => {
         </div>
       </div>
 
-      {/* Interactive Project Modal */}
+      
       {activeModalProject && (
         <ProjectModal
           project={activeModalProject}

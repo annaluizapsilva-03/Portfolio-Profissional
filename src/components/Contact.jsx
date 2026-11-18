@@ -30,10 +30,10 @@ export const Contact = ({ currentLang }) => {
       icon: Instagram,
       description: isPt ? 'Rede social e dia a dia' : 'Social profile'
     },
-    {
+   {
       name: 'WhatsApp',
       handle: isPt ? 'Conversa Direta' : 'Direct Chat',
-      url: `https://wa.me/${PERSONAL_INFO.whatsappNumber}?text=Ol%C3%A1%20Anna%20Luiza,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!`,
+      url: PERSONAL_INFO.whatsappUrl,
       icon: MessageSquare,
       description: isPt ? 'Contato rápido via WhatsApp' : 'Quick chat on WhatsApp'
     },
@@ -48,11 +48,11 @@ export const Contact = ({ currentLang }) => {
 
   return (
     <section id="contato" className="py-20 md:py-28 relative bg-[#09090b] border-t border-[#1a1a20]">
-      {/* Subtle Ambient Gold Glow */}
+      
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d4af37]/5 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
+        
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#d4af37] uppercase mb-2">
             <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
@@ -71,7 +71,7 @@ export const Contact = ({ currentLang }) => {
           </p>
         </div>
 
-        {/* Clean Responsive Grid of Clickable Contact Channels */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {socialChannels.map((channel, idx) => {
             const IconComp = channel.icon;

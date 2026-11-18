@@ -49,7 +49,7 @@ export const Skills = ({ currentLang }) => {
   return (
     <section id="habilidades" className="py-20 md:py-28 relative bg-[#09090b] border-t border-[#1a1a20]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#d4af37] uppercase mb-2">
             <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
@@ -63,7 +63,7 @@ export const Skills = ({ currentLang }) => {
           </h2>
         </div>
 
-        {/* Direct 4-Column Skill Categories */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SKILL_CATEGORIES.map((cat, catIdx) => (
             <motion.div

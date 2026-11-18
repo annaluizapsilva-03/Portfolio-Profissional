@@ -1,3 +1,4 @@
+import annaPortrait from '../assets/images/foto.portfolio.jpeg';
 import tasksImcPreview from '../assets/images/tasks_imc_showcase_1794147719476.jpg';
 import cardapioPreview from '../assets/images/cardapio_showcase_1794147718480.jpg';
 import finansmartPreview from '../assets/images/finansmart_showcase_1794147718112.jpg';
@@ -14,8 +15,8 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/annaluizapsilva-03',
   linkedin: 'https://www.linkedin.com/in/annaluizapereira03/',
   instagram: 'https://www.instagram.com/annapsilval/',
-  whatsappNumber: '5531999999999',
-  avatarUrl: '/assets/aistudio/WhatsApp_Image_2026-11-16_at_11.32.28_c72879d8.jpeg',
+  whatsappUrl: 'https://wa.link/g9sdh1',
+ avatarUrl: annaPortrait,
   about: {
    pt: {
   bio: 'Olá! Sou Anna Luiza, estudante de Engenharia de Software na PUC Minas, apaixonada por tecnologia, inovação e desenvolvimento de soluções que geram impacto positivo. Estou em constante aprendizado e aprimoramento, desenvolvendo habilidades em programação, desenvolvimento web e novas tecnologias, com interesse especial em inteligência artificial, gestão de produtos e inovação digital.',

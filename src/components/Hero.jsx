@@ -8,21 +8,21 @@ export const Hero = ({ currentLang }) => {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Subtle Gold Ambient Glow */}
+      
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#d4af37]/5 blur-[140px] pointer-events-none rounded-full" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#eab308]/4 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Split-Screen Hero Grid */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Typographic Hierarchy */}
+          
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Editorial Kicker */}
+            
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wider text-[#d4af37] uppercase">
               <GraduationCap className="w-4 h-4 text-[#d4af37]" />
               <span>{isPt ? 'Engenharia de Software · PUC Minas' : 'Software Engineering · PUC Minas'}</span>
@@ -30,7 +30,7 @@ export const Hero = ({ currentLang }) => {
               <span className="text-zinc-400">{isPt ? '2º Período' : '2nd Semester'}</span>
             </div>
 
-            {/* Improved Main Headline */}
+            
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white leading-[1.12] text-balance">
               {isPt ? (
                 <>
@@ -45,14 +45,14 @@ export const Hero = ({ currentLang }) => {
               )}
             </h1>
 
-            {/* Lead Copy */}
+            
             <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl">
               {isPt
                 ? 'Olá, sou Anna Luiza Pereira Silva, estudante do 2º período de Engenharia de Software na PUC Minas. Aqui reúno meus projetos acadêmicos, evolução técnica e aplicações desenvolvidas ao longo da graduação.'
                 : "Hello, I'm Anna Luiza Pereira Silva, a 2nd-semester Software Engineering student at PUC Minas. Here I showcase my academic projects, technical progression, and applications built throughout my degree."}
             </p>
 
-            {/* Primary Action Buttons */}
+            
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href="#projetos"
@@ -74,7 +74,7 @@ export const Hero = ({ currentLang }) => {
               </a>
             </div>
 
-            {/* Direct Social Links */}
+            
             <div className="pt-4 border-t border-[#27272a]/80 flex flex-wrap items-center gap-6 text-sm text-zinc-400">
               <span className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
                 {isPt ? 'Redes & Conexões:' : 'Connect & Socials:'}
@@ -122,7 +122,7 @@ export const Hero = ({ currentLang }) => {
             </div>
           </motion.div>
 
-          {/* Right Column: Visual Anchor / Portrait */}
+          
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -130,12 +130,12 @@ export const Hero = ({ currentLang }) => {
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
             <div className="relative group max-w-sm sm:max-w-md w-full">
-              {/* Golden Outer Frame Halo */}
+              
               <div className="absolute -inset-1 bg-gradient-to-tr from-[#d4af37]/30 via-transparent to-[#f59e0b]/20 rounded-3xl blur-md opacity-75 group-hover:opacity-100 transition duration-500" />
 
-              {/* Card Container */}
+              
               <div className="relative bg-[#0d0d10] border border-[#27272a] hover:border-[#d4af37]/50 rounded-2xl p-3 transition-all duration-300 overflow-hidden shadow-2xl">
-                {/* High-Resolution Portrait */}
+                
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[#18181b]">
                   <img
                     src={PERSONAL_INFO.avatarUrl}
@@ -145,7 +145,7 @@ export const Hero = ({ currentLang }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  {/* Overlay Name & Title */}
+                  
                   <div className="absolute bottom-4 left-4 right-4 text-left">
                     <p className="text-white font-semibold text-lg font-display tracking-tight">
                       {PERSONAL_INFO.name}
@@ -156,7 +156,7 @@ export const Hero = ({ currentLang }) => {
                   </div>
                 </div>
 
-                {/* Subtext info bar */}
+                
                 <div className="pt-3 px-1 flex items-center justify-between text-xs text-zinc-400">
                   <span>{PERSONAL_INFO.location}</span>
                   <span className="text-[#d4af37] font-mono text-[11px]">{PERSONAL_INFO.institution}</span>
@@ -166,7 +166,7 @@ export const Hero = ({ currentLang }) => {
           </motion.div>
         </div>
 
-        {/* Full-Width Key Highlights Strip Below Split */}
+       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

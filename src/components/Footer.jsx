@@ -13,7 +13,7 @@ export const Footer = ({ currentLang, onOpenReadme }) => {
     <footer className="bg-[#070709] border-t border-[#18181f] py-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#18181f]">
-          {/* Brand */}
+          
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <span className="text-xl font-bold font-display text-white tracking-tight flex items-center gap-2">
               <span>Anna Luiza</span>
@@ -26,7 +26,7 @@ export const Footer = ({ currentLang, onOpenReadme }) => {
             </p>
           </div>
 
-          {/* Nav links & Readme button */}
+          
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-400">
             <a href="#sobre" className="hover:text-[#d4af37] transition-colors">
               {isPt ? 'Sobre Mim' : 'About Me'}
@@ -53,7 +53,7 @@ export const Footer = ({ currentLang, onOpenReadme }) => {
             </button>
           </div>
 
-          {/* Social icons & Back to Top */}
+          
           <div className="flex items-center gap-4">
             <a
               href={PERSONAL_INFO.github}
@@ -100,7 +100,7 @@ export const Footer = ({ currentLang, onOpenReadme }) => {
           </div>
         </div>
 
-        {/* Copyright */}
+        
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-2">
           <p>© {new Date().getFullYear()} Anna Luiza Pereira Silva. {isPt ? 'Todos os direitos reservados.' : 'All rights reserved.'}</p>
           <p className="flex items-center gap-1">

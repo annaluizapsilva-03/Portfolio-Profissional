@@ -30,7 +30,7 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
-        {/* Zone 1: Brand Wordmark (Single text element) */}
+        
         <a
           href="#"
           className="text-xl sm:text-2xl font-bold tracking-tight text-white hover:text-[#d4af37] transition-colors whitespace-nowrap shrink-0 flex items-center gap-2"
@@ -39,7 +39,7 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
           <span className="text-[#d4af37] text-lg font-mono">/&gt;</span>
         </a>
 
-        {/* Zone 2: Navigation Links (single-line, subtle hover underlines) */}
+        
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-300">
           {navLinks.map((link) => (
             <a
@@ -52,9 +52,9 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
           ))}
         </nav>
 
-        {/* Zone 3: Actions (Language switcher & Primary CTA) */}
+        
         <div className="flex items-center gap-3 shrink-0">
-          {/* README viewer button */}
+          
           <button
             onClick={onOpenReadme}
             title={currentLang === 'pt' ? 'Ver documentação acadêmica e README' : 'View academic documentation and README'}
@@ -64,7 +64,7 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
             <span>README.md</span>
           </button>
 
-          {/* Bilingual Switcher */}
+          
           <button
             onClick={onToggleLang}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-zinc-200 hover:text-white bg-[#18181b] border border-[#27272a] hover:border-[#d4af37]/60 rounded-lg transition-all whitespace-nowrap shrink-0"
@@ -76,7 +76,7 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
             <span className="text-zinc-400 text-[10px] uppercase">{currentLang === 'pt' ? 'EN' : 'PT'}</span>
           </button>
 
-          {/* Primary Action Button */}
+          
           <a
             href="#contato"
             className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-black bg-[#d4af37] hover:bg-[#eab308] rounded-lg transition-colors shadow-sm shadow-[#d4af37]/20 whitespace-nowrap shrink-0"
@@ -85,7 +85,7 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
 
-          {/* Mobile menu hamburger toggle */}
+          
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-zinc-400 hover:text-white focus:outline-none"
@@ -96,7 +96,7 @@ export const Navbar = ({ currentLang, onToggleLang, onOpenReadme }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0e0e11] border-b border-[#27272a] px-6 py-5 space-y-4">
           <nav className="flex flex-col space-y-3">

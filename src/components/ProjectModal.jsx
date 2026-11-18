@@ -8,13 +8,12 @@ import {
 export const ProjectModal = ({ project, onClose, currentLang }) => {
   const [activeTab, setActiveTab] = useState('interactive');
 
-  // --- Interactive Mini-App States ---
-  // 1. Calculadora IMC
+  
   const [imcWeight, setImcWeight] = useState(65);
   const [imcHeight, setImcHeight] = useState(168);
   const [imcResult, setImcResult] = useState(null);
 
-  // 2. Lista de Tarefas
+  
   const [tasks, setTasks] = useState([
     { id: 1, text: 'Finalizar arquitetura de componentes do portfólio', completed: true, priority: 'Alta' },
     { id: 2, text: 'Testar responsividade e acessibilidade no mobile', completed: true, priority: 'Média' },
@@ -25,7 +24,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
   const [newTaskPriority, setNewTaskPriority] = useState('Média');
   const [taskFilter, setTaskFilter] = useState('all');
 
-  // 3. Cadastro de Alunos
+  
   const [students, setStudents] = useState([
     { id: '202601', name: 'Beatriz Almeida', course: 'Engenharia de Software', grade: 9.2, status: 'Ativo' },
     { id: '202602', name: 'Lucas Gabriel Costa', course: 'Ciência da Computação', grade: 8.7, status: 'Ativo' },
@@ -36,7 +35,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
   const [newStudentGrade, setNewStudentGrade] = useState('8.5');
   const [studentSearch, setStudentSearch] = useState('');
 
-  // 4. Cardápio Restaurante
+  
   const [menuItems] = useState([
     { id: 1, name: 'Risoto de Cogumelos Trufados', category: 'Pratos Principais', price: 68.0, desc: 'Arroz arbóreo, mix de cogumelos frescos e azeite trufado' },
     { id: 2, name: 'Salmão Grelhado com Aspargos', category: 'Pratos Principais', price: 74.0, desc: 'Filé nobre com molho de maracujá e legumes salteados' },
@@ -46,7 +45,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
   const [cart, setCart] = useState({ 1: 1, 3: 1 });
   const [orderSent, setOrderSent] = useState(false);
 
-  // 5. FinanSmart
+  
   const [transactions, setTransactions] = useState([
     { id: 1, desc: 'Renda Mensal / Bolsa', amount: 1800, type: 'income', date: 'Hoje', cat: 'Renda' },
     { id: 2, desc: 'Transporte Universitário', amount: 180, type: 'expense', date: 'Ontem', cat: 'Transporte' },
@@ -61,7 +60,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
 
   const isPt = currentLang === 'pt';
 
-  // IMC Calculation logic
+  
   const calculateIMC = () => {
     if (!imcWeight || !imcHeight) return;
     const hInMeters = imcHeight / 100;
@@ -86,7 +85,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
     setImcResult({ bmi: val, classification: cls, status: st });
   };
 
-  // Task Handlers
+  
   const addTask = (e) => {
     e.preventDefault();
     if (!newTaskText.trim()) return;
@@ -108,7 +107,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
     return true;
   });
 
-  // Student Handlers
+ 
   const addStudent = (e) => {
     e.preventDefault();
     if (!newStudentName.trim()) return;
@@ -130,7 +129,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
     s.course.toLowerCase().includes(studentSearch.toLowerCase())
   );
 
-  // Menu Handlers
+ 
   const updateCart = (id, delta) => {
     setCart(prev => {
       const current = prev[id] || 0;
@@ -149,7 +148,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
     return sum + (item ? item.price * qty : 0);
   }, 0);
 
-  // FinanSmart Handlers
+  
   const addTransaction = (e) => {
     e.preventDefault();
     const val = parseFloat(txAmount);
@@ -169,7 +168,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
-        {/* Backdrop */}
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -178,14 +177,14 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
           className="fixed inset-0 bg-black/85 backdrop-blur-md"
         />
 
-        {/* Modal Window */}
+        
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 16 }}
           className="relative bg-[#0d0d11] border border-[#27272a] hover:border-[#d4af37]/40 rounded-2xl w-full max-w-4xl max-h-[92vh] overflow-hidden shadow-2xl flex flex-col z-10"
         >
-          {/* Header */}
+          
           <div className="px-6 py-4 border-b border-[#222228] flex items-center justify-between gap-4 bg-[#121216]">
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#d4af37]">
@@ -218,7 +217,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
             </div>
           </div>
 
-          {/* Subheader Navigation Tabs */}
+          
           <div className="px-6 py-2.5 bg-[#0e0e12] border-b border-[#222228] flex items-center justify-between gap-4">
             <div className="flex items-center gap-1 bg-[#16161b] p-1 rounded-lg border border-[#27272a]">
               <button
@@ -250,11 +249,11 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
             </span>
           </div>
 
-          {/* Modal Body */}
+          
           <div className="p-6 overflow-y-auto space-y-6">
             {activeTab === 'interactive' ? (
               <div className="space-y-6">
-                {/* 1. CALCULADORA IMC */}
+                
                 {project.id === 'calculadora-imc' && (
                   <div className="bg-[#131318] border border-[#27272a] rounded-xl p-5 sm:p-6 space-y-5">
                     <div className="flex items-center gap-2 text-sm font-semibold text-white">
@@ -320,7 +319,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                   </div>
                 )}
 
-                {/* 2. LISTA DE TAREFAS */}
+                
                 {project.id === 'lista-de-tarefas' && (
                   <div className="bg-[#131318] border border-[#27272a] rounded-xl p-5 sm:p-6 space-y-4">
                     <div className="flex items-center justify-between">
@@ -351,7 +350,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       </div>
                     </div>
 
-                    {/* Add Task Form */}
+                    
                     <form onSubmit={addTask} className="flex gap-2">
                       <input
                         type="text"
@@ -378,7 +377,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       </button>
                     </form>
 
-                    {/* Task List */}
+                    
                     <div className="space-y-2 max-h-56 overflow-y-auto">
                       {filteredTasks.map((t) => (
                         <div
@@ -415,7 +414,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                   </div>
                 )}
 
-                {/* 3. CADASTRO DE ALUNOS */}
+                
                 {project.id === 'cadastro-alunos' && (
                   <div className="bg-[#131318] border border-[#27272a] rounded-xl p-5 sm:p-6 space-y-4">
                     <div className="flex items-center justify-between">
@@ -478,7 +477,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       </button>
                     </form>
 
-                    {/* Table */}
+                    
                     <div className="border border-[#27272a] rounded-lg overflow-x-auto">
                       <table className="w-full text-left text-xs">
                         <thead className="bg-[#1a1a22] text-zinc-400 font-mono">
@@ -510,7 +509,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                   </div>
                 )}
 
-                {/* 4. CARDÁPIO RESTAURANTE */}
+                
                 {project.id === 'cardapio-restaurante' && (
                   <div className="bg-[#131318] border border-[#27272a] rounded-xl p-5 sm:p-6 space-y-4">
                     <div className="flex items-center justify-between">
@@ -560,7 +559,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       ))}
                     </div>
 
-                    {/* Order summary */}
+                    
                     <div className="p-4 bg-[#171720] border border-[#2a2a34] rounded-lg flex flex-col sm:flex-row items-center justify-between gap-3">
                       <div>
                         <div className="text-xs text-zinc-400">{isPt ? 'Total com taxa de serviço (10%):' : 'Total with 10% gratuity:'}</div>
@@ -585,7 +584,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                   </div>
                 )}
 
-                {/* 5. FINANSMART */}
+                
                 {project.id === 'finansmart' && (
                   <div className="bg-[#131318] border border-[#27272a] rounded-xl p-5 sm:p-6 space-y-5">
                     <div className="flex items-center justify-between">
@@ -598,7 +597,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       </span>
                     </div>
 
-                    {/* KPI Balance Strip */}
+                    
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="p-3 bg-[#1a1a22] border border-[#27272a] rounded-lg">
                         <div className="text-[11px] text-zinc-400">{isPt ? 'Saldo Consolidado' : 'Net Balance'}</div>
@@ -614,7 +613,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       </div>
                     </div>
 
-                    {/* Add Transaction Form */}
+                    
                     <form onSubmit={addTransaction} className="grid grid-cols-1 sm:grid-cols-12 gap-2 pt-2 border-t border-[#222228]">
                       <input
                         type="text"
@@ -649,7 +648,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                       </button>
                     </form>
 
-                    {/* Transactions list */}
+                    
                     <div className="space-y-1.5 max-h-48 overflow-y-auto">
                       {transactions.map((tx) => (
                         <div
@@ -670,7 +669,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
                 )}
               </div>
             ) : (
-              /* Overview & Screens View */
+              
               <div className="space-y-6">
                 <div className="aspect-video w-full rounded-xl overflow-hidden border border-[#27272a] bg-[#121216] relative group">
                   <img
@@ -722,7 +721,7 @@ export const ProjectModal = ({ project, onClose, currentLang }) => {
             )}
           </div>
 
-          {/* Footer Actions */}
+          
           <div className="p-4 px-6 border-t border-[#222228] bg-[#101014] flex flex-wrap items-center justify-between gap-3">
             <span className="text-xs text-zinc-500">
               {isPt ? 'Código disponível para consulta pública no GitHub' : 'Public repository available on GitHub'}
