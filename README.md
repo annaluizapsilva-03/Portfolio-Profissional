@@ -12,6 +12,11 @@ Este website apresenta minha formação acadêmica em Engenharia de Software na 
 Acesse o portfólio online:https://portfolio-profissional-7oi8.onrender.com/
 ---
 
+## 🎨 Protótipo e Wireframes (Figma)
+Os wireframes de média fidelidade e o planejamento visual das telas estão disponíveis no Figma:
+- **Link do Figma:** https://www.figma.com/design/Nzn0QM8F7vK8JGhsZxS7Ex/Untitled?node-id=1-5&p=f&t=J4E4wM3SXblrcAkB-0
+  ---
+
 ## 🚀 Tecnologias Utilizadas
 
 ### Front-End
